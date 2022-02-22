@@ -4,11 +4,13 @@
 // Call a Function to Start Game
 
 function game() {
-    playRound(userInput(), computerPlay());
+    for (let i = 1; i < 6; i++) {
+        console.log(`Game: ${i}`);
+        playRound(userInput(), computerPlay());
+    }
+    
 }
 
-// playRound function not taking the arguments to compare answers. Always logs that it is a tie. 
-// Need to figure out how to make playRound accept the answer functions to compare properly...
 
 // User Inputs Answer - Case Sensitive - Must be only one of the 3 options or else makes user try input again.
 
@@ -20,6 +22,8 @@ function userInput() {
     console.log(sensitiveAnswer);
     return sensitiveAnswer;
 }
+
+
 
 // Computer Randomizes own Answer
 function computerPlay() {
@@ -48,7 +52,7 @@ function playRound(sensitiveAnswer, computerSelection) {
     } else if (sensitiveAnswer == computerSelection) {
         console.log('It\'s a tie!');
     } else {
-        console.log('Something went wrong.');
+        console.log('Check your');
     }
 }
 
