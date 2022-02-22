@@ -10,6 +10,7 @@ function game() {
         console.log(`Round: ${i}.`);
         playRound(userInput(), computerPlay());
         console.log(`Score: User:${userScore} - CPU:${cpuScore}`)
+        console.log('');
         if (userScore > cpuScore && i == 5) {
             console.log(`You won ${userScore} - ${cpuScore}.`)
         } else if (userScore < cpuScore && i == 5) {
@@ -31,8 +32,7 @@ function game() {
 function userInput() {
     let userAnswer = prompt('Rock, Paper, or Scissors?');
     let sensitiveAnswer = userAnswer.charAt(0).toUpperCase() + userAnswer.slice(1).toLowerCase();
-    console.log('User:');
-    console.log(sensitiveAnswer);
+    console.log(`User: ${sensitiveAnswer}`);
     return sensitiveAnswer;
 }
 
@@ -42,8 +42,7 @@ function userInput() {
 function computerPlay() {
     const choice = ['Rock', 'Paper', 'Scissors'];
     let computerSelection = choice[Math.floor(Math.random()*choice.length)];
-    console.log('CPU:');
-    console.log(computerSelection);
+    console.log(`CPU: ${computerSelection}`);
     return computerSelection;
 }
 
