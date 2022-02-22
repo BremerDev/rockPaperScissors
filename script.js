@@ -5,7 +5,7 @@
 
 function game() {
     for (let i = 1; i < 6; i++) {
-        console.log(`Game: ${i}`);
+        console.log(`Round: ${i}`);
         playRound(userInput(), computerPlay());
     }
     
