@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
-    <title>Rock Paper Scissors!</title>
-</head>
-<body>
-    <button id="Rock">Rock</button>
-    <button id="Paper">Paper</button>
-    <button id="Scissors">Scissors</button>
-
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <header>
+      <h1>Rock Paper Scissors, Shoot!</h1>
+    </header>
+    <main>
+      <div class="options">
+        <div class="option rock">
+          <img class="rpsImage" src="images/rock.png" alt="Rock" />
+          <button class="btn userRock">Rock</button>
+        </div>
+        <div class="option paper">
+          <img class="rpsImage" src="images/paper.jpeg" alt="Paper" />
+          <button class="btn userPaper">Paper</button>
+        </div>
+        <div class="option scissors">
+          <img class="rpsImage" src="images/scissors.png" alt="Scissors" />
+          <button class="btn userScissors">Scissors</button>
+        </div>
+      </div>
+      <div class="score">
+          <p class="result">Result: </p>
+          <p class="score">Score:</p>
+          <p></p>
+      </div>
+    </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
