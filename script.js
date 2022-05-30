@@ -3,33 +3,33 @@
 let userScore = 0;
 let cpuScore = 0;
 
-// Call a Function to Start Game
+// // Call a Function to Start Game
 
-function game() {
-    for (let i = 1; i < 6; i++) {
-        console.log(`Round: ${i}.`);
-        playRound(userInput(), computerPlay());
-        console.log(`Score: User:${userScore} - CPU:${cpuScore}`)
-        console.log('');
-        if (userScore > cpuScore && i == 5) {
-            console.log(`You won ${userScore} - ${cpuScore}.`)
-        } else if (userScore < cpuScore && i == 5) {
-            console.log(`You lost ${userScore} - ${cpuScore}.`)
-        } else if (userScore == cpuScore && i == 5) {
-            console.log(`You tied ${userScore} - ${cpuScore}.`)
-        } else if (i == 5) {
-            console.log('Something went wrong.')
-        }
-    }
+// function game() {
+//     for (let i = 1; i < 6; i++) {
+//         console.log(`Round: ${i}.`);
+//         playRound(userInput(), computerPlay());
+//         console.log(`Score: User:${userScore} - CPU:${cpuScore}`)
+//         console.log('');
+//         if (userScore > cpuScore && i == 5) {
+//             console.log(`You won ${userScore} - ${cpuScore}.`)
+//         } else if (userScore < cpuScore && i == 5) {
+//             console.log(`You lost ${userScore} - ${cpuScore}.`)
+//         } else if (userScore == cpuScore && i == 5) {
+//             console.log(`You tied ${userScore} - ${cpuScore}.`)
+//         } else if (i == 5) {
+//             console.log('Something went wrong.')
+//         }
+//     }
 
-}
-
-// function userInput() {
-//     let userAnswer = prompt('Rock, Paper, or Scissors?');
-//     let sensitiveAnswer = userAnswer.charAt(0).toUpperCase() + userAnswer.slice(1).toLowerCase();
-//     console.log(`User: ${sensitiveAnswer}`);
-//     return sensitiveAnswer;
 // }
+
+// // function userInput() {
+// //     let userAnswer = prompt('Rock, Paper, or Scissors?');
+// //     let sensitiveAnswer = userAnswer.charAt(0).toUpperCase() + userAnswer.slice(1).toLowerCase();
+// //     console.log(`User: ${sensitiveAnswer}`);
+// //     return sensitiveAnswer;
+// // }
 
 
 
@@ -46,6 +46,7 @@ function computerPlay() {
 // Change function arguments to take event buttons to pass through comparison checks.
 
 function playRound(userChoice, computerSelection) {
+
   if (userChoice == "Rock" && computerSelection == "Paper") {
     console.log("You lose, paper beats rock!");
     cpuScore++;
@@ -70,4 +71,17 @@ function playRound(userChoice, computerSelection) {
     console.log("Check again.");
   }
 }
+
+// const userRock = document.querySelector('.userRock');
+// userRock.addEventListener('click', playRound);
+
+const userChoiceNode = document.querySelectorAll('.btn');
+const userChoiceArray = Array.from(userChoiceNode);
+
+
+
+userChoiceArray.forEach(choice => choice.addEventListener('click', () => {
+    let userChoice = choice.innerHTML;
+    console.log(userChoice); 
+}));
 
