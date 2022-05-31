@@ -1,6 +1,8 @@
 let userScore = 0;
 let cpuScore = 0;
+let round = 0;
 
+const roundPara = document.querySelector('p.round');
 const result = document.querySelector('p.result');
 const score = document.querySelector('p.score');
 
@@ -9,10 +11,8 @@ const userSelectionArray = Array.from(userSelectionNode);
 
 userSelectionArray.forEach(selection => selection.addEventListener('click', () => {
     let userSelection = selection.innerHTML;
-    console.log(userSelection); 
     const choice = ["Rock", "Paper", "Scissors"];
     let computerSelection = choice[Math.floor(Math.random() * choice.length)];
-    console.log(`CPU: ${computerSelection}`);
     if (userSelection == "Rock" && computerSelection == "Paper") {
         result.innerHTML = "You lose, paper beats rock!";
         console.log("You lose, paper beats rock!");
@@ -49,11 +49,27 @@ userSelectionArray.forEach(selection => selection.addEventListener('click', () =
       } else {
         console.log("Check again.");
       }
+      ++round;
+      roundPara.innerHTML = `Round: ${round}`
+      countRounds();
 }));
 
-// update result and score in html
-// add loop that ends when rounds reach 5
-// add play again button when loop ends
+function countRounds() {
+    if (round == 5 && userScore > cpuScore) {
+        alert("You won! Play Again?");
+        window.location.reload();
+    } else if (round == 5 && userScore < cpuScore) {
+        alert("You lose! Play again?");
+        window.location.reload();
+    } else if (round == 5 && userScore == cpuScore) {
+        alert("Tie Game! Play again?");
+        window.location.reload();
+    } else {
+        return;
+    }
+};
+
+
 
 
 
